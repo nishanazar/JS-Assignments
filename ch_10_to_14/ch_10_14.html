@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> </head>
+  <script>
+    var course1 = parseFloat(prompt("Enter marks for Course 1:"));
+    var course2 = parseFloat(prompt("Enter marks for Course 2:"));
+    var course3 = parseFloat(prompt("Enter marks for Course 3:"));
+    var course4 = parseFloat(prompt("Enter marks for Course 4:"));
+    var course5 = parseFloat(prompt("Enter marks for Course 5:"));
+
+    var totalMarks = 500;
+    let obtainedMarks = course1 + course2 + course3 + course4 + course5;
+
+    alert(`Total Marks = ${totalMarks} Obtained Marks = ${obtainedMarks}`);
+
+    let parcentage = (obtainedMarks * 100) / totalMarks;
+    alert(`Parsentage ${parcentage}`);
+  </script>
+</html>

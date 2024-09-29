@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> </head>
+  <script>
+    var num1 = parseFloat(prompt("Enter the first number:"));
+    var num2 = parseFloat(prompt("Enter the second number:"));
+    var sign = prompt("Enter an operator (+, -, *, /, %):");
+
+    var result;
+    if (sign === "+") {
+      result = num1 + num2;
+    } else if (sign === "-") {
+      result = num1 - num2;
+    } else if (sign === "*") {
+      result = num1 * num2;
+    } else if (sign === "/") {
+      result = num1 / num2;
+    } else if (sign === "%") {
+      result = num1 % num2;
+    } else {
+      alert("Invaid Number");
+    }
+    if (result !== undefined) {
+      alert(`The Result is: ${result}`);
+    }
+  </script>
+</html>
