@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> </head>
+  <script>
+    var courses = [];
+    for (let i = 1; i <= 5; i++) {
+      let course = prompt(`Course: ${i}`);
+      courses.push(course);
+    }
+    alert(`All Courses ${courses.join(",")}`);
+
+    for (var j = 0; j < courses.length; j++) {
+      var updatedCourse = prompt(`Edit course ${j + 1}`, courses[j]);
+      courses.splice(j, 1, updatedCourse);
+    }
+
+    alert("Updated Courses: " + courses.join(", "));
+  </script>
+</html>

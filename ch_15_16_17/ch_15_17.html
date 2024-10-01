@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <script>
+    var courses = [];
+    var course1 = prompt("course 1");
+    var course2 = prompt("course 2");
+    var course3 = prompt("course 3");
+    var course4 = prompt("course 4");
+    var course5 = prompt("course 5");
+    courses.push(course1);
+    courses.push(course2);
+    courses.push(course3);
+    courses.push(course4);
+    courses.push(course5);
+    alert(`All Courses ${courses.join(",")}`);
+    var updatedCourse1 = prompt("Edit course 1", courses[0]);
+    courses.splice(0, 1, updatedCourse1);
+
+    var updatedCourse2 = prompt("Edit course 2", courses[1]);
+    courses.splice(1, 1, updatedCourse2);
+
+    var updatedCourse3 = prompt("Edit course 3", courses[2]);
+    courses.splice(2, 1, updatedCourse3);
+
+    var updatedCourse4 = prompt("Edit course 4", courses[3]);
+    courses.splice(3, 1, updatedCourse4);
+
+    var updatedCourse5 = prompt("Edit course 5", courses[4]);
+    courses.splice(4, 1, updatedCourse5);
+    alert("Updated Courses: " + courses.join(", "));
+  </script>
+</html>

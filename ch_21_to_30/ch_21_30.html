@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ch_21_to_30</title>
+  </head>
+  <body>
+    <script>
+      var input = prompt("Enter a decimal number");
+      var result = Math.ceil(input);
+      alert(input);
+      alert(result);
+
+      var text = "This is my dummy text";
+
+      var sliceText = text.slice(0, 4);
+      var reverseText = "";
+      alert(text);
+      alert(sliceText);
+
+      for (let i = sliceText.length - 1; i >= 0; i--) {
+        reverseText += sliceText[i];
+      }
+      alert(reverseText);
+
+      //--------- Second Assignment ---------------
+
+      var inputValue = prompt(
+        "Enter a string to capitalize every first letter:",
+        "cloUd naTive computinG"
+      );
+      var capitalizedValue = inputValue
+        .split(" ")
+        .map(function (word) {
+          return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+        })
+        .join(" ");
+
+      alert(capitalizedValue);
+    </script>
+  </body>
+</html>
