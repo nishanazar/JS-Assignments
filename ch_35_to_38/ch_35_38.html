@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ch_35_to_38</title>
+  </head>
+  <body>
+    <script>
+      var inputValue = prompt("Enter a Text:");
+
+      function capitalizeWords(inputValue) {
+        return inputValue
+          .toLowerCase()
+          .split(" ")
+          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(" ");
+      }
+
+      console.log(capitalizeWords(inputValue));
+
+      //-------------Second Assignment-------
+      var value = prompt("Enter a Number:");
+      value = Number(value);
+
+      function factorial(n) {
+        if (n < 0) {
+          return "Factorial is not defined for negative numbers.";
+        } else if (n === 0 || n === 1) {
+          return "1";
+        } else {
+          let result = 1;
+          for (let i = 2; i <= n; i++) {
+            result *= i;
+          }
+          return result;
+        }
+      }
+
+      console.log(value);
+
+      console.log(factorial(value));
+
+      //---------------------------------------
+      //-----Understand this logic
+
+      function multiply(a, b, c) {
+        return a * b * c;
+      }
+      var value = multiply(4, 3, 6);
+      console.log(value);
+
+      console.log("value", value); // The result is ? Ans = value 72
+
+      function add(a, b) {
+        var z = a + b;
+        return z;
+      }
+      console.log(add("Add ", 10, 10));
+
+      function multiply(a, b, c) {
+        var z = a * add(b, c);
+        return z;
+      }
+
+      console.log(multiply(5, 5, 5));
+
+      console.log("z", z); //The result is ? Ans: Uncaught ReferenceError: z is not defined
+
+      var course = "cloud native computing";
+      console.log("course", course);
+    </script>
+  </body>
+</html>

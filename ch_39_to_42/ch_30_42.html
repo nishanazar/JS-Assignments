@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ch_39_to_42</title>
+  </head>
+  <body>
+    <script>
+      var totalMarks = 500;
+      var obtainedMarks = 0;
+
+      for (var i = 1; i <= 5; i++) {
+        var courseMarks = parseInt(prompt("Enter marks for Course " + i));
+        obtainedMarks += courseMarks;
+      }
+
+      let percentage = (obtainedMarks * 100) / totalMarks;
+
+      alert(`Obtained Marks: ${obtainedMarks}`);
+      alert(`Percentage %: ${percentage}`);
+
+      function calculateGrade(percentage) {
+        switch (true) {
+          case percentage >= 90 && percentage <= 100:
+            return "Grade A+";
+
+          case percentage >= 75 && percentage <= 89:
+            return "Grade A";
+
+          case percentage >= 60 && percentage <= 74:
+            return "Grade B";
+
+          case percentage >= 45 && percentage <= 60:
+            return "Grade C";
+          case percentage >= 30 && percentage <= 44:
+            return "Grade D";
+
+          case percentage == 0 && percentage <= 29:
+            return "Fail";
+
+          default:
+            return "Invalid percentage";
+        }
+      }
+
+      var grade = calculateGrade(percentage);
+      alert("Your grade is: " + grade);
+    </script>
+  </body>
+</html>

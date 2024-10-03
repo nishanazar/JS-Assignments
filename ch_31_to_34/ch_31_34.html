@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ch_31_to_34</title>
+  </head>
+  <body>
+    <script>
+      const name = prompt("Enter your name:");
+      const day = parseInt(prompt("Enter your birth date:"));
+      const month = parseInt(prompt("Enter your birth month:")) - 1;
+      const year = parseInt(prompt("Enter your birth year:"));
+
+      const currentDate = new Date();
+      const currentHour = currentDate.getHours();
+      let greeting = "Good Morning";
+
+      if (currentHour >= 5 && currentHour < 12) {
+        greeting = "Good Morning";
+      } else if (currentHour >= 12 && currentHour < 17) {
+        greeting = "Good Afternoon";
+      } else if (currentHour >= 17 && currentHour < 21) {
+        greeting = "Good night";
+      }
+      console.log(`Hello ${name}, ${greeting}`);
+
+      const dob = new Date(year, month, day);
+      const pstDob = dob.toLocaleString("en-Us", { timeZone: "Asia/Karachi" });
+
+      console.log(`Your DOB is ${pstDob}`);
+
+      const ageMilliseconds = currentDate.getTime() - dob.getTime();
+      const ageDate = new Date(ageMilliseconds);
+      const ageYears = ageDate.getUTCFullYear() - 1970;
+
+      const ageDays = ageDate.getUTCDate() - 1;
+      const ageHours = ageDate.getUTCHours();
+
+      console.log(
+        `You are ${ageYears} years old \nYour age in ${ageDays} days \nYour age in ${ageHours} hours`
+      );
+      const ageInDays = Math.floor(ageMilliseconds / (1000 * 60 * 60 * 24));
+      console.log(`Your Age in Days: ${ageInDays}`);
+
+      // Calculate time left for next birthday
+      let nextBirthday = new Date(currentDate.getFullYear(), month, day);
+      if (nextBirthday < currentDate) {
+        nextBirthday = new Date(currentDate.getFullYear() + 1, month, day);
+      }
+
+      const timeLeft = nextBirthday.getTime() - currentDate.getTime();
+      const daysLeft = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hoursLeft = Math.floor(
+        (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutesLeft = Math.floor(
+        (timeLeft % (1000 * 60 * 60)) / (1000 * 60)
+      );
+      const secondsLeft = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      // Check if today is the birthday
+      if (daysLeft === 0 && hoursLeft === 0) {
+        console.log(
+          `Happy Birthday ${name}. Today is your ${ageYears}th birthday!`
+        );
+      } else {
+        console.log(
+          `How much time left in your next birthday? ${daysLeft} days ${hoursLeft} hours ${minutesLeft} minutes ${secondsLeft} seconds`
+        );
+      }
+    </script>
+  </body>
+</html>
